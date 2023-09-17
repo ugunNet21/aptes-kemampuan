@@ -3,6 +3,8 @@ import 'package:get/get.dart';
 import 'result_screen.dart';
 
 class SQScreen extends StatefulWidget {
+  const SQScreen({super.key});
+
   @override
   _SQScreenState createState() => _SQScreenState();
 }
@@ -31,7 +33,7 @@ class _SQScreenState extends State<SQScreen> {
       }
     });
     if (questions.length > 1) {
-      Future.delayed(Duration(seconds: 2), () {
+      Future.delayed(const Duration(seconds: 2), () {
         setState(() {
           questions.removeAt(0);
           options.removeAt(0);
@@ -39,7 +41,7 @@ class _SQScreenState extends State<SQScreen> {
         });
       });
     } else {
-      Future.delayed(Duration(seconds: 2), () {
+      Future.delayed(const Duration(seconds: 2), () {
         Get.off(ResultScreen(score: score));
       });
     }
@@ -49,19 +51,19 @@ class _SQScreenState extends State<SQScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('SQ Test'),
+        title: const Text('SQ Test'),
       ),
       body: Center(
         child: questions.isEmpty
-            ? CircularProgressIndicator()
+            ? const CircularProgressIndicator()
             : Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Text(
                     questions[0],
-                    style: TextStyle(fontSize: 20),
+                    style: const TextStyle(fontSize: 20),
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   Column(
                     children: List.generate(options[0].length, (index) {
                       return RadioListTile(

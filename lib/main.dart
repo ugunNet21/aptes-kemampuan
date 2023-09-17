@@ -5,10 +5,12 @@ import 'eq_screen.dart';
 import 'sq_screen.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
@@ -19,21 +21,23 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '/',
       getPages: [
-        GetPage(name: '/', page: () => HomeScreen()),
-        GetPage(name: '/iq', page: () => IQScreen()),
-        GetPage(name: '/eq', page: () => EQScreen()),
-        GetPage(name: '/sq', page: () => SQScreen()),
+        GetPage(name: '/', page: () => const HomeScreen()),
+        GetPage(name: '/iq', page: () => const IQScreen()),
+        GetPage(name: '/eq', page: () => const EQScreen()),
+        GetPage(name: '/sq', page: () => const SQScreen()),
       ],
     );
   }
 }
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('IQEQSQ App'),
+        title: const Text('IQEQSQ App'),
       ),
       body: Center(
         child: Column(
@@ -43,22 +47,22 @@ class HomeScreen extends StatelessWidget {
               onPressed: () {
                 Get.toNamed('/iq');
               },
-              child: Text('IQ Test'),
+              child: const Text('IQ Test'),
             ),
-            // SizedBox(height: 16),
-            // ElevatedButton(
-            //   onPressed: () {
-            //     Get.toNamed('/eq');
-            //   },
-            //   child: Text('EQ Test'),
-            // ),
-            // SizedBox(height: 16),
-            // ElevatedButton(
-            //   onPressed: () {
-            //     Get.toNamed('/sq');
-            //   },
-            //   child: Text('SQ Test'),
-            // ),
+            const SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () {
+                Get.toNamed('/eq');
+              },
+              child: const Text('EQ Test'),
+            ),
+            const SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: () {
+                Get.toNamed('/sq');
+              },
+              child: const Text('SQ Test'),
+            ),
           ],
         ),
       ),

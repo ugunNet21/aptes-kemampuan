@@ -49,41 +49,41 @@ class ResultScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Result'),
+        title: const Text('Result'),
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
+            const Text(
               'Your Scores:',
               style: TextStyle(fontSize: 24),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Text(
               'IQ: ${getIQCategory()}',
-              style: TextStyle(fontSize: 20),
+              style: const TextStyle(fontSize: 20),
             ),
             Text(
               'EQ: ${getEQCategory()}',
-              style: TextStyle(fontSize: 20),
+              style: const TextStyle(fontSize: 20),
             ),
             Text(
               'SQ: ${getSQCategory()}',
-              style: TextStyle(fontSize: 20),
+              style: const TextStyle(fontSize: 20),
             ),
-            SizedBox(height: 16),
-            Text(
+            const SizedBox(height: 16),
+            const Text(
               'Suggestion for Future Skills:',
               style: TextStyle(fontSize: 20),
               textAlign: TextAlign.center,
             ),
-            SizedBox(height: 8),
+            const SizedBox(height: 8),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Text(
                 getFutureSkills(),
-                style: TextStyle(fontSize: 16),
+                style: const TextStyle(fontSize: 16),
                 textAlign: TextAlign.center,
               ),
             ),
